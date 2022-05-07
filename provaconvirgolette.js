@@ -1,4 +1,9 @@
-const API_KEY = 'room=A';
-fetch('https://kdmg.dii.univpm.it/iot/mobile/ar/example/query.php?' + API_KEY)
-  .then((response) => response.json())
-  .then((json) => console.log(json));
+var requestOptions = {
+  method: 'GET',
+  redirect: 'follow'
+};
+
+fetch("https://kdmg.dii.univpm.it/iot/mobile/ar/example/query.php?room=A", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
