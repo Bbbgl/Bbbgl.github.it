@@ -1,13 +1,13 @@
+var myHeaders = new Headers();
+myHeaders.append("room", "A");
 
-var xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
+var requestOptions = {
+  method: 'GET',
+  headers: myHeaders,
+  redirect: 'follow'
+};
 
-xhr.addEventListener("readystatechange", function() {
-  if(this.readyState === 4) {
-    console.log(this.responseText);
-  }
-});
-
-xhr.open("GET", "https://kdmg.dii.univpm.it/iot/mobile/ar/example/query.php?room=A");
-
-xhr.send();
+fetch("https://kdmg.dii.univpm.it/iot/mobile/ar/example/query.php", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
