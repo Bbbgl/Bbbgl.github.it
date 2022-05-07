@@ -1,9 +1,13 @@
-var requestOptions = {
-  method: 'GET',
-  redirect: 'follow'
-};
 
-fetch("https://kdmg.dii.univpm.it/iot/mobile/ar/example/query.php", requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function() {
+  if(this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+
+xhr.open("GET", "https://kdmg.dii.univpm.it/iot/mobile/ar/example/query.php?room=A");
+
+xhr.send();
