@@ -4,5 +4,4 @@ fetch('https://kdmg.dii.univpm.it/iot/mobile/ar/example/query.php?room=A', {mode
 }).catch(function(error) {  
   console.log('Request failed', error)  
 });
-© 2022 GitHub, Inc.
-Terms
+
