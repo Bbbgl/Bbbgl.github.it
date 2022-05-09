@@ -1,10 +1,23 @@
-<!DOCTYPE html>
-<script src="fetchcors.js"></script>
 <html>
-    <head>
-        <title>Example</title>
-    </head>
-    <body>
-        <p>CIAO.</p>
-    </body>
+
+<head>
+  <title>Example</title>
+</head>
+
+<body>
+  <p>CIAOo.</p>
+  <script>
+    fetch("https://kdmg.dii.univpm.it/iot/mobile/ar/example/query.php?room=A")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data)
+        room = data.room;
+        console.log(room);
+        devices = data.devices;
+        console.log(devices);
+        document.write('you are in the room ' + room);
+      });
+  </script>
+</body>
+
 </html>
