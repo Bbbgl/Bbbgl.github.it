@@ -6,4 +6,5 @@ fetch("https://kdmg.dii.univpm.it/iot/mobile/ar/example/query.php?room=A")
     console.log(room);
     devices = data.devices;
     console.log(devices);
+    document.getElementById("myRoom").innerHTML = room;
   });
